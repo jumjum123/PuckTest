@@ -77,6 +77,8 @@ var Puck = (function() {
 
   function log(level, s) {
     if (puck.log) puck.log(level, s);
+	$("#log")[0].value = $("#log")[0].value + "\n" + s;
+console.log("logged\n");
   }
 
   function ab2str(buf) {
@@ -172,6 +174,7 @@ var Puck = (function() {
         filters:[
           { namePrefix: 'Puck.js' },
           { namePrefix: 'Espruino' },
+		  { namePrefix: $("#board")[0].value },
           { services: [ NORDIC_SERVICE ] }
         ], optionalServices: [ NORDIC_SERVICE ]}).then(function(device) {
       log(1, 'Device Name:       ' + device.name);
