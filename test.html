@@ -8,20 +8,19 @@
  <table border="1" width="100%">
   <tr>
    <td align="right">Board prefix</td>
-   <td align="left"><input type="text" id="board"></td>
+   <td align="left"><input type="text" id="board" value="set"></td>
   </tr>
   <tr>
-   <td align="right"></td>
-   <td align="left"></td>
+   <td align="right">Write to boards</td>
+   <td align="left"><input type="text" id="writetext" value="my Test">
+                    <button onclick="Puck.write($('#writetext')[0].value);\n"</td>
   </tr>
+  <tr>
+   <th><button onclick="Puck.write('LED1.set();\n');">On!</button></th>
+   <th></th>
+  </tr>
+  <tr><th colspan="2">Log<br><textarea id="log" cols="100" rows="10">empty</textarea></th></tr>
  </table>
- LogFile<hr>
-  <textarea id="log" cols="100" rows="10">
-  empty
-  </textarea>
-  <hr>
-  <button onclick="Puck.write('LED1.set();\n');">On!</button>
-  <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
  </body>
  <script>
    $("#log")[0].value = "hugo did it at " + new Date();
