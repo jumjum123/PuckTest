@@ -2,11 +2,21 @@
  <head>
    <meta http-equiv="refresh" content="5">
  </head>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="https://jumjum123.github.io/PuckTest/puck.js"></script>
  <body>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://jumjum123.github.io/PuckTest/puck.js"></script>
-  LogFile<hr>
-  <textarea id="log">
+ <table border="1" width="100%">
+  <tr>
+   <td align="right">Board prefix</td>
+   <td align="left"><input type="text" id="board"></td>
+  </tr>
+  <tr>
+   <td align="right"></td>
+   <td align="left"></td>
+  </tr>
+ </table>
+ LogFile<hr>
+  <textarea id="log" lines="20">
   empty
   </textarea>
   <hr>
@@ -14,6 +24,6 @@
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
  </body>
  <script>
-   $("#log")[0].value = "hugo did it";
+   $("#log")[0].value = "hugo did it at " + new Date();
  </script>
 </html>
